@@ -7,8 +7,8 @@ const hasProjects = siteConfig.projects && siteConfig.projects.length > 0;
   hasProjects && (
     <section id="projects" class="p-8 sm:p-12 md:p-16 xl:p-24">
       <div>
-        <div class="grid grid-cols-1 xl:grid-cols-12 gap-8 xl:gap-16 items-start">
-          <div class="xl:col-span-4">
+        <div class="grid grid-cols-1 2xl:grid-cols-12 gap-8 2xl:gap-16 items-start">
+          <div class="2xl:col-span-4">
             <h2 class="text-3xl sm:text-4xl md:text-5xl xl:text-7xl font-bold text-slate-100">
               Projects
             </h2>
@@ -18,7 +18,7 @@ const hasProjects = siteConfig.projects && siteConfig.projects.length > 0;
             />
           </div>
 
-          <div class="xl:col-span-8">
+          <div class="2xl:col-span-8">
             <div class="space-y-8">
               {siteConfig.projects.map((project, index) => {
                 const Component = project.link ? "a" : "div";
