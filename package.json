@@ -10,7 +10,14 @@
   },
   "dependencies": {
     "@tailwindcss/vite": "^4.1.11",
-    "astro": "^5.12.3",
+    "@tsparticles/astro": "^4.1.1",
+    "@tsparticles/engine": "^4.1.1",
+    "@tsparticles/slim": "^4.1.1",
+    "astro": "^6.4.2",
     "tailwindcss": "^4.1.11"
+  },
+  "devDependencies": {
+    "prettier": "^3.8.3",
+    "prettier-plugin-astro": "^0.14.1"
   }
 }

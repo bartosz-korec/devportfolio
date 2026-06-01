@@ -25,15 +25,67 @@ import "../styles/global.css";
     />
     <title>{siteConfig.name} - {siteConfig.title}</title>
   </head>
-  <body>
-    <Header />
-    <section>
-      <Hero />
-      <About />
-      <Projects />
-      <Experience />
-      <Education />
-    </section>
-    <Footer />
+  <body class="bg-slate-950 text-slate-100">
+    <div class="relative min-h-screen w-full overflow-x-hidden">
+      <div
+        id="tsparticles"
+        class="fixed inset-0 w-full h-full -z-10 pointer-events-auto"
+      >
+      </div>
+
+      <Header />
+      <section>
+        <Hero />
+        <About />
+        <Projects />
+        <Experience />
+        <Education />
+      </section>
+      <Footer />
+    </div>
+
+    <script>
+      import { tsParticles } from "@tsparticles/engine";
+      import { loadSlim } from "@tsparticles/slim";
+
+      // Kliencka inicjalizacja po załadowaniu DOM
+      loadSlim(tsParticles).then(() => {
+        tsParticles.load({
+          id: "tsparticles",
+          options: {
+            background: {
+              color: { value: "transparent" },
+            },
+            particles: {
+              color: { value: "#3b82f6" },
+              links: {
+                color: "#3b82f6",
+                distance: 150,
+                enable: true,
+                opacity: 0.45, // Znacznie wyraźniejsze linie
+                width: 1.5, // Minimalnie grubsze wiązania
+              },
+              move: { enable: true, speed: 0.8 },
+              number: {
+                value: 110, // Zagęszczamy ilość węzłów
+                density: { enable: true, width: 1000 },
+              },
+              opacity: { value: 0.7 }, // Wyraźniejsze, mocniej świecące punkty
+              shape: { type: "circle" },
+              size: { value: { min: 2, max: 4 } }, // Minimalnie większe promienie kropek
+            },
+            interactivity: {
+              events: {
+                onHover: { enable: true, mode: "grab" },
+              },
+              modes: {
+                grab: { distance: 220, links: { opacity: 0.6 } }, // Silniejsze i dalsze przyciąganie do myszki
+              },
+            },
+            detectRetina: true,
+          },
+        });
+      });
+    </script>
   </body>
 </html>
